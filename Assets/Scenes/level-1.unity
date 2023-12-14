@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 43511262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.2, z: 0}
+  m_LocalPosition: {x: 0, y: 3.092, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,7 +201,7 @@ Camera:
   field of view: 90
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbeb9ff899020cf4bba0c367151844ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
+  sensX: 800
+  sensY: 800
   orientation: {fileID: 1872025978}
 --- !u!1 &91036834
 GameObject:
@@ -458,6 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258398693}
   - component: {fileID: 1258398694}
+  - component: {fileID: 1258398695}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -510,6 +511,32 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1258398695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258398692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929575ccff20dc14ca04a99aeec8f082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  groundDrag: 2
+  jumpForce: 10
+  jumpCooldown: 1
+  airMultiplier: 1
+  walkSpeed: 0
+  sprintSpeed: 0
+  jumpKey: 32
+  playerHeight: 2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  orientation: {fileID: 1872025978}
+  text_speed: {fileID: 0}
 --- !u!1 &1490805981
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +611,7 @@ Transform:
   m_GameObject: {fileID: 1698185088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.35, z: 0}
+  m_LocalPosition: {x: 0, y: 2.625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -687,7 +714,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768570009}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3aeb7dadc0c69d54d9e5777e9d5631f1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
