@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeweegMinimapIcoon : MonoBehaviour
+public class BeweegCamera : MonoBehaviour
 {
     public GameObject speler; // de speler dat het minimapicoon volgt
+    private float zijwaarts;
+    private float opwaarts;
+    private float voorwaarts;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,13 @@ public class BeweegMinimapIcoon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(speler.transform.position.x, 30 , speler.transform.position.z);
+        zijwaarts = speler.transform.position.x;
+
+        opwaarts = speler.transform.position.y;
+        opwaarts += 0.4f;
+
+        voorwaarts = speler.transform.position.z;
+        voorwaarts += 7.3f;
+        transform.position = new Vector3(zijwaarts, opwaarts, voorwaarts);
     }
 }

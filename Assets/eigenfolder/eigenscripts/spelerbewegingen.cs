@@ -20,7 +20,7 @@ public class testraketbeweginen : MonoBehaviour
         float bewegen = Input.GetAxis("Vertical");
 
         VliegVooruit(sprongen);
-        Ronddraaien(transform, draaien * -3);
+        Ronddraaien(transform, draaien * -2f);
         voortbewegen(bewegen);
     }
 
@@ -32,7 +32,7 @@ public class testraketbeweginen : MonoBehaviour
 
     private void Ronddraaien (Transform richting, float aantal)
     {
-        richting.Rotate(0, 0, aantal);
+        richting.Rotate(0, aantal , 0);
     }
 
     private void voortbewegen (float totaal)
