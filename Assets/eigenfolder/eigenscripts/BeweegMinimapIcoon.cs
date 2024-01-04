@@ -23,5 +23,6 @@ public class BeweegMinimapIcoon : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(speler.transform.position.x, 30 , speler.transform.position.z);
+        transform.transform.rotation = Quaternion.LookRotation(speler.transform.forward, speler.transform.up);
     }
 }
