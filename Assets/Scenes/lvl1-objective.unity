@@ -323,13 +323,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ooit een levendige stad, heeft ongecontroleerde vervuiling haar straten
-    verstikt. Als de gekozen beschermer van duurzaamheid, is het jouw missie om de
-    stad te redden. Herstel de glans en maak een verschil voor een schoner morgen!
+  m_text: 'Ooit een levendig bos, heeft de menselijke vervuiling ervoor gezorgd dat
+    het bos stervende is. Als de gekozen beschermer van duurzaamheid, is het jouw
+    missie om het bos te redden. Herstel de glans en maak een verschil voor een schoner
+    morgen!
 
 
-    Verzamel
-    alle vuilniszakken!'
+    Verzamel alle vuilniszakken!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.8
+  m_fontSize: 57.45
   m_fontSizeBase: 33.3
   m_fontWeight: 400
   m_enableAutoSizing: 1
