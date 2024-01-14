@@ -8,17 +8,21 @@ public class gamestates : MonoBehaviour
 {
     public GameObject speler;
     public GameObject levelscherm;
+    public GameObject introscherm;
     public GameObject eindscherm;
     public GameObject finish;
+
+    public testraketbeweginen bewegingen;
 
 
     public enum Gamestates
     {
+        introductiescherm,
         level,
         eindscherm
     }
 
-    public Gamestates gamestate = Gamestates.level;
+    public Gamestates gamestate = Gamestates.introductiescherm;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,8 @@ public class gamestates : MonoBehaviour
             speler = GameObject.FindWithTag("Player");
             print("speler gevonden");
         }
+
+        bewegingen = GameObject.FindWithTag("Player").GetComponent<testraketbeweginen>();
     }
 
     // Update is called once per frame
@@ -52,5 +58,23 @@ public class gamestates : MonoBehaviour
                 break;
             
         }
+    }
+
+
+    public void StartLevel()
+    {
+        gamestate = Gamestates.level;
+        introscherm.SetActive(false);
+        levelscherm.SetActive(true);
+        eindscherm.SetActive(false);
+        bewegingen.enabled = true;
+    }
+    public void eindigen()
+    {
+        gamestate = Gamestates.eindscherm;
+        levelscherm.SetActive(false);
+        eindscherm.SetActive(true);
+        bewegingen.enabled = false;
+        print("squadulah we are off");
     }
 }
