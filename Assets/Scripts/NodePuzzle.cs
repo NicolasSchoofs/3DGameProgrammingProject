@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class NodePuzzle : MonoBehaviour
 {
-    public Transform[] nodes; // Drag and drop the node objects in the inspector
     public Material lineMaterial;
     
     private LineRenderer lineRenderer;
+    private List<Transform> connectedNodes = new List<Transform>();
 
     void Start()
     {
@@ -17,15 +17,21 @@ public class NodePuzzle : MonoBehaviour
         lineRenderer.endWidth = 0.1f;    // Adjust the width as needed
         lineRenderer.material = lineMaterial; // Assign the material
 
-        // Set the initial positions of the Line Renderer
-        UpdateLinePositions();
+        // Disable Line Renderer initially
+        lineRenderer.enabled = false;
     }
 
     void Update()
     {
-        // Check for player input and update the positions of the Line Renderer
+        // Check for player input
+        if (Input.GetMouseButtonDown(0))
+        {
+            HandleNodeClick();
+        }
+
+        // Update the positions of the Line Renderer
         UpdateLinePositions();
-        
+
         // Check if the puzzle is solved
         if (IsPuzzleSolved())
         {
@@ -34,21 +40,45 @@ public class NodePuzzle : MonoBehaviour
         }
     }
 
+    void HandleNodeClick()
+    {
+        // Cast a ray from the mouse position to detect nodes
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            Transform clickedNode = hit.transform;
+
+            // Toggle connection status for the clicked node
+            if (connectedNodes.Contains(clickedNode))
+            {
+                connectedNodes.Remove(clickedNode);
+            }
+            else
+            {
+                connectedNodes.Add(clickedNode);
+            }
+
+            // Enable Line Renderer if there are at least two connected nodes
+            lineRenderer.enabled = connectedNodes.Count >= 2;
+        }
+    }
+
     void UpdateLinePositions()
     {
-        // Set the positions of the Line Renderer based on the nodes
-        lineRenderer.positionCount = nodes.Length;
-        for (int i = 0; i < nodes.Length; i++)
+        // Set the positions of the Line Renderer based on the connected nodes
+        lineRenderer.positionCount = connectedNodes.Count;
+        for (int i = 0; i < connectedNodes.Count; i++)
         {
-            lineRenderer.SetPosition(i, nodes[i].position);
+            lineRenderer.SetPosition(i, connectedNodes[i].position);
         }
     }
 
     bool IsPuzzleSolved()
     {
-        // Check if the pattern is correct (e.g., nodes connected in a specific order)
-        // Return true if the puzzle is solved, false otherwise
-        // Add your specific logic here
+        // Implement your puzzle-solving logic here based on the connected nodes
+        // For example, check if the connected nodes form a specific pattern
         return false;
     }
 }
