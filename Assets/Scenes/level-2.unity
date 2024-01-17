@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437a345d1c4de8e4db1670c9fcd63472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mazeCamera: {fileID: 733176640}
 --- !u!1 &90507878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5059096297602895884, guid: 4ea66815a06020046a0f8db35244919c, type: 3}
@@ -159,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeCamera: {fileID: 733176640}
   mazeRenderTexture: {fileID: 8400000, guid: f70192468a0f18042ad9412113853d50, type: 2}
+  isInteracting: 0
 --- !u!4 &109429963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4929362291227570779, guid: 4345fca613d6ad847865a23562320e00, type: 3}
