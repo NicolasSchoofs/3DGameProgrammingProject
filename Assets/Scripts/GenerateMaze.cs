@@ -190,6 +190,30 @@ void Win() {
     DrawMaze();
 
 
+    GameObject gameManagerObject = GameObject.Find("GameManager");
+
+    if (gameManagerObject != null)
+        {
+            // Get the GameManager script component
+            GameManager gameManager = gameManagerObject.GetComponent<GameManager>();
+
+            // Check if the GameManager script component is found
+            if (gameManager != null)
+            {
+                // Call the wonPuzzle1 function in the GameManager script
+                gameManager.wonPuzzle1();
+            }
+            else
+            {
+                Debug.LogError("GameManager script not found on GameManager object.");
+            }
+        }
+        else
+        {
+            Debug.LogError("GameManager object not found in the scene.");
+        }
+
+
 }
 
 
