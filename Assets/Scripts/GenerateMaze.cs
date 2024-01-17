@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class MazeGenerator : MonoBehaviour
 {
 
     public Camera mazeCamera;
+    public GameObject player;
+    public GameObject playerModel;
+    public TMP_Text interactionText;
     private bool isInteracting = false;
+
+    private bool won = false;
+
+    float interactionRange = 6f;
 
     private  int[,] maze = {
          {1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -42,23 +50,55 @@ public class MazeGenerator : MonoBehaviour
 
      void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if(won && !isInteracting)
         {
-            isInteracting = !isInteracting;
-
-            if (isInteracting)
-            {
-                mazeCamera.enabled = true;
-                Debug.Log("Maze interaction started.");
-            }
-            else
-            {
-                mazeCamera.enabled = false;
-                Debug.Log("Maze interaction ended.");
-            }
+            interactionText.text = "";
+            return;
         }
 
-        if(isInteracting)
+
+        Vector3 playerPosition = transform.InverseTransformPoint(player.transform.position);
+        if(playerPosition.magnitude <= interactionRange)
+        {
+            if(!isInteracting && !won) 
+            {
+                interactionText.text = "Press E to interact";
+            }
+            if(isInteracting && won)
+            {
+                interactionText.text = "Press E to end the puzzle";
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                isInteracting = !isInteracting;
+
+                if (isInteracting && !won)
+                {
+                    player.GetComponent<FPSController>().enabled = false;
+                    mazeCamera.enabled = true;
+                    interactionText.text = "Use the arrow keys to navigate the maze";
+                    Debug.Log("Maze interaction started.");
+                    playerModel.SetActive(false);
+                }
+                if(!isInteracting)
+                {
+                    player.GetComponent<FPSController>().enabled = true;
+                    mazeCamera.enabled = false;
+                    interactionText.text = "";
+                    Debug.Log("Maze interaction ended.");
+                    playerModel.SetActive(true);
+                }
+
+        }
+
+        }
+        else 
+        {
+            interactionText.text = "";
+        }
+      
+
+        if(isInteracting && !won)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -131,6 +171,7 @@ void MovePlayer(int offsetX, int offsetY)
 }
 
 void Win() {
+    won = true;
 
     for (int i = 0; i < maze.GetLength(0); i++)
         {
