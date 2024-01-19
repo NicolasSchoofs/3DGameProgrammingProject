@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private bool puzzle1 = false;
+    private bool puzzle2 = false;
 
     public AudioClip powerUpAudio;
 
@@ -66,8 +67,6 @@ public class GameManager : MonoBehaviour
                             // Change the material of the cylinder to the newMaterial
                             cylinderRenderer.material = glowingMaterial;
 
-                            audioSource.Play();
-
                             puzzle1 = false;
                         }
                         else
@@ -94,5 +93,11 @@ public class GameManager : MonoBehaviour
 
     public void wonPuzzle1() {
         puzzle1 = true;
+        audioSource.Play();
+    }
+
+     public void wonPuzzle2() {
+        puzzle2 = true;
+        audioSource.Play();
     }
 }
