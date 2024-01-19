@@ -20,8 +20,8 @@ public class testraketbeweginen : MonoBehaviour
         float bewegen = Input.GetAxis("Vertical");
 
         VliegVooruit(sprongen);
-        Ronddraaien(transform, draaien * -2f);
-        voortbewegen(bewegen);
+        Ronddraaien(transform, draaien);
+        //voortbewegen(bewegen);
     }
 
     private void VliegVooruit (float totaal)

@@ -3,16 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gamestates : MonoBehaviour
 {
     public GameObject speler;
+    public GameObject player;
     public GameObject levelscherm;
     public GameObject introscherm;
     public GameObject eindscherm;
     public GameObject finish;
-
+    public spelbestuurder spelbestuurder;
+    public Text eindscoretekst;
     public testraketbeweginen bewegingen;
+    public FPSController movement;
 
 
     public enum Gamestates
@@ -32,7 +36,8 @@ public class gamestates : MonoBehaviour
             print("speler gevonden");
         }
 
-        bewegingen = GameObject.FindWithTag("Player").GetComponent<testraketbeweginen>();
+        spelbestuurder = GameObject.FindWithTag("needed").GetComponent<spelbestuurder>();
+        //bewegingen = GameObject.FindWithTag("Player").GetComponent<testraketbeweginen>();
     }
 
     // Update is called once per frame
@@ -67,14 +72,25 @@ public class gamestates : MonoBehaviour
         introscherm.SetActive(false);
         levelscherm.SetActive(true);
         eindscherm.SetActive(false);
-        bewegingen.enabled = true;
+        //bewegingen.enabled = true;
+        player.SetActive(true);
     }
     public void eindigen()
     {
         gamestate = Gamestates.eindscherm;
         levelscherm.SetActive(false);
         eindscherm.SetActive(true);
-        bewegingen.enabled = false;
+        //bewegingen.enabled = false;
+        player.SetActive(false);
+        if (spelbestuurder.punten == 1)
+        {
+            eindscoretekst.text = "Gefeliciteerd\n Je vond :  " + spelbestuurder.punten + " pinguin";
+        }
+        else
+        {
+            eindscoretekst.text = "Gefeliciteerd\n Je vond :  " + spelbestuurder.punten + " pinguins";
+        }
+        
         print("squadulah we are off");
     }
 }

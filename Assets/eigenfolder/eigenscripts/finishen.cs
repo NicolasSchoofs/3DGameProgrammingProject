@@ -24,7 +24,7 @@ public class finishen : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        print("HIII");
         if (other.gameObject.tag == "Player")
         {
             manager.eindigen();

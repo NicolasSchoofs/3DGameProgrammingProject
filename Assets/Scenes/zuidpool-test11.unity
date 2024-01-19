@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b2d36b5d4a9f248adf211bad0f99b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GeladenLevel: zuidpool-test10
+  GeladenLevel: zuidpool-test11
 --- !u!114 &598896286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3355,6 +3355,8 @@ MonoBehaviour:
   introscherm: {fileID: 2079312995}
   eindscherm: {fileID: 163525016}
   finish: {fileID: 1007191781}
+  spelbestuurder: {fileID: 0}
+  eindscoretekst: {fileID: 251786937}
   bewegingen: {fileID: 0}
   movement: {fileID: 0}
   gamestate: 0
