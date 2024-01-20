@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class gamestates : MonoBehaviour
@@ -54,13 +56,24 @@ public class gamestates : MonoBehaviour
             case Gamestates.level:
                 if (klikken == 1)
                 {
-                    gamestate = Gamestates.eindscherm;
-                    levelscherm.SetActive(false);
-                    eindscherm.SetActive(true);
-                    print("thats all folks");
+                    // plaats pinguin op minimap
+                    print("ik zweer plechtig dat ik nobele plannen heb");
                 }
 
                 break;
+            case Gamestates.eindscherm:
+                if (klikken == 1)
+                {
+                    //gamestate = Gamestates.introductiescherm;
+                    print("opnieuw!");
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    //player.transform.position = new Vector3(46, 1, -40);
+                    //StartLevel();
+                }
+                break;
+
             
         }
     }
@@ -84,11 +97,17 @@ public class gamestates : MonoBehaviour
         player.SetActive(false);
         if (spelbestuurder.punten == 1)
         {
-            eindscoretekst.text = "Gefeliciteerd\n Je vond :  " + spelbestuurder.punten + " pinguin";
+            eindscoretekst.text = "Gefeliciteerd\nJe vond " + spelbestuurder.punten + " pinguin\n" +
+                "Hoewel de meeste pinguinsoorten niet bedreigd zijn voelen ook zij in het dagelijks leven het effect van de klimaatverandering\n" +
+                "Hopelijk ben je nu meer bewust van de problemen in de wereld\n" +
+                "druk op escape om opnieuw te proberen";
         }
         else
         {
-            eindscoretekst.text = "Gefeliciteerd\n Je vond :  " + spelbestuurder.punten + " pinguins";
+            eindscoretekst.text = "Gefeliciteerd\nJe vond " + spelbestuurder.punten + " pinguins\n" +
+            "Hoewel de meeste pinguinsoorten niet bedreigd zijn voelen ook zij in het dagelijks leven het effect van de klimaatverandering\n" +
+            "Hopelijk ben je nu meer bewust van de problemen in de wereld\n" +
+            "druk op escape om opnieuw te proberen";
         }
         
         print("squadulah we are off");
