@@ -89,6 +89,53 @@ public class GameManager : MonoBehaviour
                 Debug.LogError("cable2 object not found in the scene.");
             }
         }
+
+        if (puzzle2)
+        {
+            GameObject cable4Object = GameObject.Find("cable4");
+
+            if (cable4Object != null)
+            {
+                // Find the child object named "cylinder"
+                Transform cylinderTransform = cable4Object.transform.Find("Cylinder");
+
+                // Check if the cylinderTransform is found
+                if (cylinderTransform != null)
+                {
+                    // Get the MeshRenderer component of the cylinderTransform
+                    MeshRenderer cylinderRenderer = cylinderTransform.GetComponent<MeshRenderer>();
+
+                    // Check if the MeshRenderer component is found
+                    if (cylinderRenderer != null)
+                    {
+                        // Check if the material is found
+                        if (glowingMaterial != null)
+                        {
+                            // Change the material of the cylinder to the newMaterial
+                            cylinderRenderer.material = glowingMaterial;
+
+                            puzzle2 = false;
+                        }
+                        else
+                        {
+                            Debug.LogError("Material 'newMaterial' not found in Resources folder.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("MeshRenderer component not found on cylinder object.");
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Cylinder object not found as a child of cable2 object.");
+                }
+            }
+            else
+            {
+                Debug.LogError("cable2 object not found in the scene.");
+            }
+        }
     }
 
     public void wonPuzzle1() {
