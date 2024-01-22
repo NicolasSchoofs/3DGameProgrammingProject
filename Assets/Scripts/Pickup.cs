@@ -8,10 +8,17 @@ using UnityEngine.SceneManagement;
 public class Pickup : MonoBehaviour
 {
     public TextMeshProUGUI counterText;
-    private int coinCounter = 0;  
+    private GameManager gameManager;
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager niet gevonden in de scene!");
+        }
+
         UpdateCounterText();  
     }
 
@@ -25,10 +32,10 @@ public class Pickup : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Coin opgepakt!");
-            coinCounter++;
+            gameManager?.addCount();
             UpdateCounterText();
             Destroy(gameObject);
-            Debug.Log(coinCounter);
+            
             
         }
     }
@@ -36,11 +43,16 @@ public class Pickup : MonoBehaviour
     
     void UpdateCounterText()
     {
+
+        int coinCounter = gameManager?.GetCoinCount() ?? 0;
+
         if (counterText != null)
         {
             counterText.text = "Vuilniszakken gevonden: " + coinCounter + "/10";
         }
     }
+
+   
 
     
 }
