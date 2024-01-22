@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - WallPuzzle1
+  - WallPuzzle2
+  - WallPuzzle3
   layers:
   - Default
   - TransparentFX

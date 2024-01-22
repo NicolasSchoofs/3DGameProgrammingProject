@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class Puzzle2 : MonoBehaviour
+public class Puzzle3 : MonoBehaviour
 {
 
     public Camera mazeCamera;
@@ -18,17 +18,27 @@ public class Puzzle2 : MonoBehaviour
     float interactionRange = 6f;
 
     private  int[,] maze = {
-{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 6, 0, 6, 0, 6, 0, 1, 0, 7, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 6, 0, 1, 0, 8, 0, 1, 0, 7, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 6, 0, 1, 0, 8, 0, 1, 0, 7, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 1, 0, 1, 0, 1, 0, 6, 0, 6, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  
-{2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+{4, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+{1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1},
+{1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1},
+{1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+{1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1},
+{1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1},
+{1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1},
+{1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1},
+{1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1},
+{1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+{1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+{1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+{1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1},
+{1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1},
+{1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1},
+{1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1},
+{1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+{1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1},
+{1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
+{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
         };
 
 
@@ -154,29 +164,13 @@ void MovePlayer(int offsetX, int offsetY)
         }
         else if (cellValue == 4)
         {
-            
-    
-            if(CheckConnectivity(maze, 6, new int[] { 7, 8}) && CheckConnectivity(maze, 7, new int[] { 6, 8 }) && CheckConnectivity(maze, 8, new int[] { 6, 7 }) ) {
-                Debug.LogError(CheckConnectivity(maze, 6, new int[] { 7, 8 }));
-                Win();
-            }
+            Win();
         }
     }
      DrawMaze();
 }
 
-void PrintSubarray(int[,] subarray)
-        {
-            for (int i = 0; i < subarray.GetLength(0); i++)
-            {
-                for (int j = 0; j < subarray.GetLength(1); j++)
-                {
-                    Console.Write(subarray[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-        }
+
 
 void Win() {
     won = true;
@@ -207,7 +201,7 @@ void Win() {
 
             if (gameManager != null)
             {
-                gameManager.wonPuzzle2();
+                gameManager.wonPuzzle3();
             }
             else
             {
@@ -251,13 +245,13 @@ bool IsWithinBounds(int x, int y)
         Vector3 cubeLocalPosition = transform.localPosition;
 
         
-        float wallScaleX = 0.19f;
-        float wallScaleY = 0.19f;
-        float wallScaleZ = 0.19f;
+        float wallScaleX = 0.1f;
+        float wallScaleY = 0.1f;
+        float wallScaleZ = 0.1f;
 
         
 
-        float wallPositionZ = x * wallScaleX + cubeLocalPosition.z;
+        float wallPositionX = x * wallScaleX + cubeLocalPosition.x;
         float wallPositionY = y * wallScaleY + cubeLocalPosition.y;
 
 
@@ -311,111 +305,18 @@ bool IsWithinBounds(int x, int y)
         }
 
 
-        wall.tag = "WallPuzzle2";
+        wall.tag = "WallPuzzle3";
 
         wall.transform.localScale = new Vector3(wallScaleX, wallScaleY, wallScaleZ);
-        wall.transform.localPosition = new Vector3(cubeLocalPosition.x + 0.3f, wallPositionY - 1.63f, wallPositionZ - 0.95f);
+        wall.transform.localPosition = new Vector3(wallPositionX - 1f, wallPositionY - 1.63f, cubeLocalPosition.z - 0.35f);
     }
 
 
 void DestroyAllWalls() 
-
 {
-    GameObject[] walls = GameObject.FindGameObjectsWithTag("WallPuzzle2");
+    GameObject[] walls = GameObject.FindGameObjectsWithTag("WallPuzzle3");
     foreach(GameObject wall in walls) {
         GameObject.Destroy(wall);
     }
 }
-
-//Path finding
-static bool IsValidMove(int[,] maze, bool[,] visited, int row, int col, int[] targetValues)
-    {
-        int rows = maze.GetLength(0);
-        int cols = maze.GetLength(1);
-
-        return  row >= 0 && row < rows && col >= 0 && col < cols && !visited[row, col] && Array.IndexOf(targetValues, maze[row, col]) == -1;
-    }
-
-    static void DFS(int[,] maze, bool[,] visited, int row, int col, int[] targetValues)
-    {
-        visited[row, col] = true;
-
-        // Define the possible moves (up, down, left, right)
-        int[,] moves = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
-
-        for (int i = 0; i < 4; i++)
-        {
-            int newRow = row + moves[i, 0];
-            int newCol = col + moves[i, 1];
-
-            if (IsValidMove(maze, visited, newRow, newCol, targetValues))
-            {
-                DFS(maze, visited, newRow, newCol, targetValues);
-            }
-        }
-    }
-
-    static bool CheckConnectivity(int[,] maze, int value, int[] otherValues)
-    {
-        int rows = maze.GetLength(0);
-        int cols = maze.GetLength(1);
-        bool[,] visited = new bool[rows, cols];
-
-        int startRow = -1, startCol = -1;
-
-        // Find the starting point (any cell with the specified value)
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (maze[i, j] == value)
-                {
-                    startRow = i;
-                    startCol = j;
-                    break;
-                }
-            }
-        }
-
-        if (startRow != -1 && startCol != -1)
-        {
-            // Perform DFS from the starting point
-            DFS(maze, visited, startRow, startCol, otherValues);
-
-            // Check if all cells with the specified value are visited
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    if (maze[i, j] == value && !visited[i, j])
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            // Check if any cell with the specified value can reach a cell with other specified values
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    if (Array.IndexOf(otherValues, maze[i, j]) != -1 && visited[i, j])
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
-        else
-        {
-            // No cell with the specified value found
-            return false;
-        }
-    }
-
-
 }
-
-

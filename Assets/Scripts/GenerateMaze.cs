@@ -290,7 +290,7 @@ bool IsWithinBounds(int x, int y)
         }
 
 
-        wall.tag = "Wall";
+        wall.tag = "WallPuzzle1";
 
         wall.transform.localScale = new Vector3(wallScaleX, wallScaleY, wallScaleZ);
         wall.transform.localPosition = new Vector3(cubeLocalPosition.x + 0.3f, wallPositionY - 1.63f, wallPositionZ - 0.95f);
@@ -300,7 +300,7 @@ bool IsWithinBounds(int x, int y)
 void DestroyAllWalls() 
 
 {
-    GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
+    GameObject[] walls = GameObject.FindGameObjectsWithTag("WallPuzzle1");
     foreach(GameObject wall in walls) {
         GameObject.Destroy(wall);
     }
