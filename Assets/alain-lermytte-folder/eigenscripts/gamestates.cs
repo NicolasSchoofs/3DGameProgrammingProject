@@ -100,16 +100,16 @@ public class gamestates : MonoBehaviour
             eindscoretekst.text = "Gefeliciteerd\nJe vond " + spelbestuurder.punten + " pinguin\n\n" +
                 "Hoewel de meeste pinguinsoorten niet bedreigd zijn voelen ook zij in het dagelijks leven het effect van de klimaatverandering\n" +
                 "Het smelten van de poolkappen maken veilige plekken zoeken lastiger. Door de vissenvangst wordt eten zoeken moeilijker. Zeker als ze vastkomen in vissennetten\n\n" +
-                "Hopelijk ben je nu meer bewust van de problemen in de wereld\n" +
-                "druk op escape om opnieuw te proberen";
+                "Hopelijk ben je nu meer bewust van de problemen in de wereld\n";
+                //"druk op escape om opnieuw te proberen";
         }
         else
         {
             eindscoretekst.text = "Gefeliciteerd\nJe vond " + spelbestuurder.punten + " pinguins\n\n" +
             "Hoewel de meeste pinguinsoorten niet bedreigd zijn voelen ook zij in het dagelijks leven het effect van de klimaatverandering\n" +
             "Het smelten van de poolkappen maken veilige plekken zoeken lastiger. Door de vissenvangst wordt eten zoeken moeilijker. Zeker als ze vastkomen in vissennetten\n\n" +
-            "Hopelijk ben je nu meer bewust van de problemen in de wereld\n" +
-            "druk op escape om opnieuw te proberen";
+            "Hopelijk ben je nu meer bewust van de problemen in de wereld\n";
+            //"druk op escape om opnieuw te proberen";
         }
         
         print("squadulah we are off");
