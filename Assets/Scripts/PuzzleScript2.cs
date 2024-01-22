@@ -18,17 +18,27 @@ public class Puzzle2 : MonoBehaviour
     float interactionRange = 6f;
 
     private  int[,] maze = {
-{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 6, 0, 6, 0, 6, 0, 1, 0, 7, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 6, 0, 1, 0, 8, 0, 1, 0, 7, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 6, 0, 1, 0, 8, 0, 1, 0, 7, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 1, 0, 1, 0, 1, 0, 6, 0, 6, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  
-{2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+{1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+{1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1},
+{1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1},
+{1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1},
+{1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1},
+{1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1},
+{1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1},
+{1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1},
+{1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
+{1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+{1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1},
+{1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1},
+{1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1},
+{1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1},
+{1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1},
+{1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1},
+{1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1},
+{1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1},
+{1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1},
+{1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1},
+{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1}
         };
 
 
@@ -154,12 +164,7 @@ void MovePlayer(int offsetX, int offsetY)
         }
         else if (cellValue == 4)
         {
-            
-    
-            if(CheckConnectivity(maze, 6, new int[] { 7, 8}) && CheckConnectivity(maze, 7, new int[] { 6, 8 }) && CheckConnectivity(maze, 8, new int[] { 6, 7 }) ) {
-                Debug.LogError(CheckConnectivity(maze, 6, new int[] { 7, 8 }));
-                Win();
-            }
+            Win();
         }
     }
      DrawMaze();
@@ -251,9 +256,9 @@ bool IsWithinBounds(int x, int y)
         Vector3 cubeLocalPosition = transform.localPosition;
 
         
-        float wallScaleX = 0.19f;
-        float wallScaleY = 0.19f;
-        float wallScaleZ = 0.19f;
+        float wallScaleX = 0.1f;
+        float wallScaleY = 0.1f;
+        float wallScaleZ = 0.1f;
 
         
 
@@ -288,21 +293,6 @@ bool IsWithinBounds(int x, int y)
             Renderer wallRenderer = wall.GetComponent<Renderer>();
             wallRenderer.material.color = Color.green;
         }
-        if(type == 6) 
-        {
-            Renderer wallRenderer = wall.GetComponent<Renderer>();
-            wallRenderer.material.color = Color.gray;
-        }
-        if(type == 7) 
-        {
-            Renderer wallRenderer = wall.GetComponent<Renderer>();
-            wallRenderer.material.color = Color.cyan;
-        }
-        if(type == 8) 
-        {
-            Renderer wallRenderer = wall.GetComponent<Renderer>();
-            wallRenderer.material.color = Color.magenta;
-        }
 
         if(type == 9) 
         {
@@ -326,96 +316,7 @@ void DestroyAllWalls()
         GameObject.Destroy(wall);
     }
 }
-
-//Path finding
-static bool IsValidMove(int[,] maze, bool[,] visited, int row, int col, int[] targetValues)
-    {
-        int rows = maze.GetLength(0);
-        int cols = maze.GetLength(1);
-
-        return  row >= 0 && row < rows && col >= 0 && col < cols && !visited[row, col] && Array.IndexOf(targetValues, maze[row, col]) == -1;
-    }
-
-    static void DFS(int[,] maze, bool[,] visited, int row, int col, int[] targetValues)
-    {
-        visited[row, col] = true;
-
-        // Define the possible moves (up, down, left, right)
-        int[,] moves = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
-
-        for (int i = 0; i < 4; i++)
-        {
-            int newRow = row + moves[i, 0];
-            int newCol = col + moves[i, 1];
-
-            if (IsValidMove(maze, visited, newRow, newCol, targetValues))
-            {
-                DFS(maze, visited, newRow, newCol, targetValues);
-            }
-        }
-    }
-
-    static bool CheckConnectivity(int[,] maze, int value, int[] otherValues)
-    {
-        int rows = maze.GetLength(0);
-        int cols = maze.GetLength(1);
-        bool[,] visited = new bool[rows, cols];
-
-        int startRow = -1, startCol = -1;
-
-        // Find the starting point (any cell with the specified value)
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (maze[i, j] == value)
-                {
-                    startRow = i;
-                    startCol = j;
-                    break;
-                }
-            }
-        }
-
-        if (startRow != -1 && startCol != -1)
-        {
-            // Perform DFS from the starting point
-            DFS(maze, visited, startRow, startCol, otherValues);
-
-            // Check if all cells with the specified value are visited
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    if (maze[i, j] == value && !visited[i, j])
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            // Check if any cell with the specified value can reach a cell with other specified values
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    if (Array.IndexOf(otherValues, maze[i, j]) != -1 && visited[i, j])
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
-        else
-        {
-            // No cell with the specified value found
-            return false;
-        }
-    }
-
-
 }
+
 
 

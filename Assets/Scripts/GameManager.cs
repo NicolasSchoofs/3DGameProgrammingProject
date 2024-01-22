@@ -8,6 +8,13 @@ public class GameManager : MonoBehaviour
     private bool puzzle2 = false;
     private bool puzzle3 = false;
 
+    private bool pause = false;
+    
+    public Canvas pauseScreen;
+
+    public GameObject player;
+    public GameObject house;
+
     public AudioClip powerUpAudio;
 
     private AudioSource audioSource;
@@ -41,31 +48,50 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if puzzle1 is true
-        if (puzzle1)
+        
+        if (puzzle1 && puzzle2 && puzzle3)
         {
-            // Find the GameObject with the name "cable2"
-            GameObject cable2Object = GameObject.Find("cable2");
+            
+           
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            pause = !pause;
+        }
+
+        if(pause)
+        {
+            pauseScreen.enabled = true;
+            Time.timeScale = 0f;
+        }
+        else 
+        {
+            pauseScreen.enabled = false;
+            Time.timeScale = 1f;
+        }
+       
+    }
+
+    public void wonPuzzle1() {
+        puzzle1 = true;
+        audioSource.Play();
+
+         GameObject cable2Object = GameObject.Find("cable2");
 
             // Check if the cable2Object is found
             if (cable2Object != null)
             {
-                // Find the child object named "cylinder"
                 Transform cylinderTransform = cable2Object.transform.Find("Cylinder");
 
-                // Check if the cylinderTransform is found
                 if (cylinderTransform != null)
                 {
-                    // Get the MeshRenderer component of the cylinderTransform
                     MeshRenderer cylinderRenderer = cylinderTransform.GetComponent<MeshRenderer>();
 
-                    // Check if the MeshRenderer component is found
                     if (cylinderRenderer != null)
                     {
-                        // Check if the material is found
                         if (glowingMaterial != null)
                         {
-                            // Change the material of the cylinder to the newMaterial
                             cylinderRenderer.material = glowingMaterial;
 
                         }
@@ -88,11 +114,13 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogError("cable2 object not found in the scene.");
             }
-        }
+    }
 
-        if (puzzle2)
-        {
-            GameObject cable4Object = GameObject.Find("cable4");
+     public void wonPuzzle2() {
+        puzzle2 = true;
+        audioSource.Play();
+
+        GameObject cable4Object = GameObject.Find("cable4");
 
             if (cable4Object != null)
             {
@@ -134,11 +162,13 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogError("cable4 object not found in the scene.");
             }
-        }
+    }
 
-        if (puzzle3)
-        {
-            GameObject cable6Object = GameObject.Find("cable6");
+    public void wonPuzzle3() {
+        puzzle3 = true;
+        audioSource.Play();
+
+        GameObject cable6Object = GameObject.Find("cable6");
 
             if (cable6Object != null)
             {
@@ -180,21 +210,5 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogError("cable6 object not found in the scene.");
             }
-        }
-    }
-
-    public void wonPuzzle1() {
-        puzzle1 = true;
-        audioSource.Play();
-    }
-
-     public void wonPuzzle2() {
-        puzzle2 = true;
-        audioSource.Play();
-    }
-
-    public void wonPuzzle3() {
-        puzzle3 = true;
-        audioSource.Play();
     }
 }
