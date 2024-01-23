@@ -4,8 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/zuidpool.unity
-    guid: 3cebfe250213e074f85b1561fe4d9969
+  m_Scenes: []
   m_configObjects: {}
