@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManagerLevel1 : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     private int coinCounter = 0;
 

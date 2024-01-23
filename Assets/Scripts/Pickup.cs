@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 public class Pickup : MonoBehaviour
 {
     public TextMeshProUGUI counterText;
-    private GameManagerLevel1 gameManager;
+    private GameManager gameManager;
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManagerLevel1>();
+        gameManager = FindObjectOfType<GameManager>();
 
         if (gameManager == null)
         {
