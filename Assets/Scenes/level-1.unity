@@ -20,19 +20,11 @@ RenderSettings:
   m_FogDensity: 0.0045
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-<<<<<<< HEAD
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 0
-=======
   m_AmbientSkyColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
->>>>>>> main
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 59573b088aaea0442bf29e0a0e9d1339, type: 2}
   m_HaloStrength: 0.5
@@ -131,8 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &3837227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,7 +301,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> main
 --- !u!1 &153048043
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,11 +314,7 @@ GameObject:
   - component: {fileID: 153048044}
   m_Layer: 0
   m_Name: Main Camera
-<<<<<<< HEAD
-  m_TagString: MainCamera
-=======
   m_TagString: Player
->>>>>>> main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,11 +406,7 @@ GameObject:
   - component: {fileID: 186763382}
   m_Layer: 0
   m_Name: Player
-<<<<<<< HEAD
-  m_TagString: Untagged
-=======
   m_TagString: Player
->>>>>>> main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,11 +429,7 @@ MonoBehaviour:
   jumpPower: 7
   gravity: 15
   lookSpeed: 2
-<<<<<<< HEAD
-  lookXLimit: 45
-=======
   lookXLimit: 90
->>>>>>> main
   canMove: 1
 --- !u!143 &186763383
 CharacterController:
@@ -489,11 +466,7 @@ Transform:
   m_GameObject: {fileID: 186763381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 2.9138381, y: 20.2, z: -182}
-=======
   m_LocalPosition: {x: 275.54, y: 32.92, z: 259.13}
->>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -501,8 +474,6 @@ Transform:
   - {fileID: 153048046}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &200331671
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +557,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> main
 --- !u!1 &278838519
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,8 +651,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &330845109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -969,7 +937,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 057700ee4cd23f24bba57eb3314fc0d2, type: 3}
->>>>>>> main
 --- !u!1 &600057192
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,11 +951,7 @@ GameObject:
   - component: {fileID: 600057194}
   m_Layer: 0
   m_Name: PlayerModel
-<<<<<<< HEAD
-  m_TagString: Untagged
-=======
   m_TagString: Player
->>>>>>> main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1002,11 +965,7 @@ Transform:
   m_GameObject: {fileID: 600057192}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-=======
   m_LocalPosition: {x: 10.61, y: -2.2, z: -0.61}
->>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1028,11 +987,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-<<<<<<< HEAD
-  m_ProvidesContacts: 0
-=======
   m_ProvidesContacts: 1
->>>>>>> main
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -1089,9 +1044,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600057192}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
---- !u!1 &905089533
-=======
 --- !u!1001 &600314202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1361,7 +1313,6 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 378cd6adbee919e4fa1d070a1ad1b1a6, type: 3}
 --- !u!1 &1003361558
->>>>>>> main
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1369,11 +1320,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 905089536}
-  - component: {fileID: 905089535}
-  - component: {fileID: 905089534}
-=======
   - component: {fileID: 1003361559}
   - component: {fileID: 1003361562}
   - component: {fileID: 1003361561}
@@ -2852,7 +2798,6 @@ GameObject:
   - component: {fileID: 2133316062}
   - component: {fileID: 2133316061}
   - component: {fileID: 2133316064}
->>>>>>> main
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -2860,21 +2805,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
-<<<<<<< HEAD
---- !u!154 &905089534
-=======
 --- !u!154 &2133316061
->>>>>>> main
 TerrainCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 905089533}
-=======
   m_GameObject: {fileID: 2133316060}
->>>>>>> main
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2886,31 +2823,14 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-<<<<<<< HEAD
-  m_TerrainData: {fileID: 15600000, guid: f40d9cb0bff484a45a7910e59a93d7f9, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &905089535
-=======
   m_TerrainData: {fileID: 15600000, guid: 2250cd81a81ae2b4a9e747616354f609, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &2133316062
->>>>>>> main
 Terrain:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 905089533}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: f40d9cb0bff484a45a7910e59a93d7f9, type: 2}
-  m_TreeDistance: 400
-  m_TreeBillboardDistance: 2000
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 140
-=======
   m_GameObject: {fileID: 2133316060}
   m_Enabled: 1
   serializedVersion: 6
@@ -2920,7 +2840,6 @@ Terrain:
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
->>>>>>> main
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -2945,35 +2864,21 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
-<<<<<<< HEAD
---- !u!4 &905089536
-=======
 --- !u!4 &2133316063
->>>>>>> main
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 905089533}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -601, y: 0, z: -681}
-  m_LocalScale: {x: 0.040170707, y: 0.8699625, z: 0.8699625}
-=======
   m_GameObject: {fileID: 2133316060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
->>>>>>> main
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!82 &2133316064
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3070,16 +2975,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
->>>>>>> main
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 278838521}
   - {fileID: 186763384}
-<<<<<<< HEAD
-  - {fileID: 905089536}
-=======
   - {fileID: 2133316063}
   - {fileID: 1330592904}
   - {fileID: 200331674}
@@ -3106,4 +3007,3 @@ SceneRoots:
   - {fileID: 691803341}
   - {fileID: 1003361559}
   - {fileID: 98854528}
->>>>>>> main
