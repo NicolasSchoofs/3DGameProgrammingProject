@@ -26,12 +26,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("lvl1-objective");
     }
 
-<<<<<<< HEAD
-=======
     public void NextLevel() 
     {
         SceneManager.LoadScene("level-2");
     }
 
->>>>>>> main
 }

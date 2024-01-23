@@ -195,7 +195,7 @@ void Win() {
     if (gameManagerObject != null)
         {
             // Get the GameManager script component
-            GameManager gameManager = gameManagerObject.GetComponent<GameManager>();
+            GameManagerLevel2 gameManager = gameManagerObject.GetComponent<GameManagerLevel2>();
 
             // Check if the GameManager script component is found
             if (gameManager != null)

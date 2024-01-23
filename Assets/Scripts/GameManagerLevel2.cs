@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< HEAD
 
-public class GameManager : MonoBehaviour
+public class GameManagerLevel2 : MonoBehaviour
 {
     private bool puzzle1 = false;
     private bool puzzle2 = false;
@@ -211,33 +210,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.LogError("cable6 object not found in the scene.");
             }
-=======
-using UnityEngine.SceneManagement;
-
-
-
-public class GameManager : MonoBehaviour
-{
-    private int coinCounter = 0;
-
-    public void addCount() 
-    {
-        coinCounter++;
-        loadNextScene();
-
-    }
-
-    public void loadNextScene() {
-    
-        if(coinCounter >= 1)
-        {
-            SceneManager.LoadScene("lvl1-end");
-        }
-    }
-
-    public int GetCoinCount() 
-    {
-        return coinCounter;
->>>>>>> main
     }
 }
+
+
