@@ -10,6 +10,7 @@ public class BeweegCamera : MonoBehaviour
     private float voorwaarts;
 
     // Start is called before the first frame update
+    //dit script is in de finale versie niet in gebruik
     void Start()
     {
         if (speler)

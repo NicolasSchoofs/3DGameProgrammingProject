@@ -7,6 +7,7 @@ public class testraketbeweginen : MonoBehaviour
 {
     private Rigidbody kubus;
     // Start is called before the first frame update
+    //dit script is in de finale versie niet in gebruik
     void Start()
     {
         kubus = GetComponent<Rigidbody>();

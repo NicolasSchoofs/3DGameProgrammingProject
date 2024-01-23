@@ -9,6 +9,7 @@ public class BeweegMinimapIcoon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //speler ophalen
         if (speler)
         {
             Debug.Log("speler gevonden");
@@ -22,6 +23,7 @@ public class BeweegMinimapIcoon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //verplaats op de minimap zodat het boven de huidige locatie van de speler komt
         transform.position = new Vector3(speler.transform.position.x, 30 , speler.transform.position.z);
         transform.transform.rotation = Quaternion.LookRotation(speler.transform.forward, speler.transform.up);
     }

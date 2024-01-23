@@ -19,6 +19,7 @@ public class gamestates : MonoBehaviour
     public Text eindscoretekst;
     public testraketbeweginen bewegingen;
     public FPSController movement;
+    public AudioListener geluid;
 
 
     public enum Gamestates
@@ -38,7 +39,10 @@ public class gamestates : MonoBehaviour
             print("speler gevonden");
         }
 
+        // scorebord ophalen
         spelbestuurder = GameObject.FindWithTag("needed").GetComponent<spelbestuurder>();
+        // audio ophalen
+        geluid = player.GetComponentInChildren<AudioListener>();
         //bewegingen = GameObject.FindWithTag("Player").GetComponent<testraketbeweginen>();
     }
 
@@ -46,7 +50,7 @@ public class gamestates : MonoBehaviour
     void Update()
     {
 
-        // finishknop
+        
         float klikken = Input.GetAxis("Cancel");
         //print(klikken);
 
@@ -56,7 +60,7 @@ public class gamestates : MonoBehaviour
             case Gamestates.level:
                 if (klikken == 1)
                 {
-                    // plaats pinguin op minimap
+                    // test lezen input
                     print("ik zweer plechtig dat ik nobele plannen heb");
                 }
 
@@ -68,9 +72,9 @@ public class gamestates : MonoBehaviour
                     print("opnieuw!");
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
+                    //huidige level laden voor testing
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     //player.transform.position = new Vector3(46, 1, -40);
-                    //StartLevel();
                 }
                 break;
 
@@ -82,6 +86,7 @@ public class gamestates : MonoBehaviour
     public void StartLevel()
     {
         gamestate = Gamestates.level;
+        geluid.enabled = true;
         introscherm.SetActive(false);
         levelscherm.SetActive(true);
         eindscherm.SetActive(false);
@@ -91,6 +96,7 @@ public class gamestates : MonoBehaviour
     public void eindigen()
     {
         gamestate = Gamestates.eindscherm;
+        geluid.enabled = false;
         levelscherm.SetActive(false);
         eindscherm.SetActive(true);
         //bewegingen.enabled = false;
@@ -99,7 +105,7 @@ public class gamestates : MonoBehaviour
         {
             eindscoretekst.text = "\nGefeliciteerd\nJe vond " + spelbestuurder.punten + " pinguin\n\n" +
                 "Hoewel de meeste pinguinsoorten niet bedreigd zijn voelen ook zij in het dagelijks leven het effect van de klimaatverandering\n" +
-                "Het smelten van de poolkappen maken veilige plekken zoeken lastiger. Door de vissenvangst wordt eten zoeken moeilijker. Zeker als ze vastkomen in vissennetten\n\n" +
+                "Het smelten van de poolkappen maken veilige plekken zoeken lastiger. Door de vissenvangst wordt eten zoeken moeilijker. Zeker als ze vastkomen in visnetten\n\n" +
                 "Hopelijk ben je nu meer bewust van de problemen in de wereld\n";
                 //"druk op escape om opnieuw te proberen";
         }
@@ -107,7 +113,7 @@ public class gamestates : MonoBehaviour
         {
             eindscoretekst.text = "\nGefeliciteerd\nJe vond " + spelbestuurder.punten + " pinguins\n\n" +
             "Hoewel de meeste pinguinsoorten niet bedreigd zijn voelen ook zij in het dagelijks leven het effect van de klimaatverandering\n" +
-            "Het smelten van de poolkappen maken veilige plekken zoeken lastiger. Door de vissenvangst wordt eten zoeken moeilijker. Zeker als ze vastkomen in vissennetten\n\n" +
+            "Het smelten van de poolkappen maken veilige plekken zoeken lastiger. Door de vissenvangst wordt eten zoeken moeilijker. Zeker als ze vastkomen in visnetten\n\n" +
             "Hopelijk ben je nu meer bewust van de problemen in de wereld\n";
             //"druk op escape om opnieuw te proberen";
         }

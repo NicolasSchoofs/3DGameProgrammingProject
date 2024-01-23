@@ -10,7 +10,7 @@ public class Laadmenu : MonoBehaviour
     // Start is called before the first frame update
     public void LevelLaden()
     {
-        //laad level3. zou op einde naar startscherm moeten laden
+        //dit script is in de finale versie niet in gebruik
 
         // level 3
 

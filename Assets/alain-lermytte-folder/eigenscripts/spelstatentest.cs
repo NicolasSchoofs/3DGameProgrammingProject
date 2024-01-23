@@ -5,6 +5,7 @@ using UnityEngine;
 public class spelstatentest : MonoBehaviour
 {
     // Start is called before the first frame update
+    //dit script is in de finale versie niet in gebruik
     void Start()
     {
         

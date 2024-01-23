@@ -14,6 +14,7 @@ public class oprapen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //scorebord ophalen
         manager = GameObject.FindWithTag("needed").GetComponent<spelbestuurder>();
     }
 
@@ -25,7 +26,7 @@ public class oprapen : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
+        // als speler in de buurt van een pinguin komt en klikt
         if (other.gameObject.tag == "Player")
         {
             float vind = Input.GetAxis("Fire1");

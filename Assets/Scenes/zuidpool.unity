@@ -2776,6 +2776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: level3-Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6013346585192595178, guid: c9285074926678d42b486914c34d4bce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6266842412302140985, guid: c9285074926678d42b486914c34d4bce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46
@@ -3485,6 +3489,7 @@ MonoBehaviour:
   eindscoretekst: {fileID: 251786937}
   bewegingen: {fileID: 0}
   movement: {fileID: 0}
+  geluid: {fileID: 0}
   gamestate: 0
 --- !u!1 &1172139349
 GameObject:

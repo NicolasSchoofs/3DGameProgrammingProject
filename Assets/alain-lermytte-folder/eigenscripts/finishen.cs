@@ -9,6 +9,7 @@ public class finishen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // gamemanager ophalen
         manager = GameObject.FindWithTag("management").GetComponent<gamestates>();
         if (manager is not null)
         {
@@ -24,6 +25,7 @@ public class finishen : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // als speler op de finish komt eindig level
         print("HIII");
         if (other.gameObject.tag == "Player")
         {
