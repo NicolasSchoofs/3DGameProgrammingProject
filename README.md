@@ -1,15 +1,15 @@
 ### Bijdrage Nicolas
 
-#### Taken: Level 2,
+#### Taken: Level 2, Pauzescherm, 'Death'scherm
 
 ---
 
 ### Bijdrage Thibeau
 
-#### Taken: Level 1,
+#### Taken: Level 1, Startscherm
 
 ---
 
 ### Bijdrage Alain
 
-#### Taken: Level 3,
+#### Taken: Level 3, Eindscherm

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Fantasy Skybox FREE/Scenes/Demo with terrain.unity.meta
 guid: 594da9eac4a488a479b252ff922516d9
+========
+guid: c732593fe76e5a84197f9cd13963f706
+>>>>>>>> main:Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Environment_Free.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
