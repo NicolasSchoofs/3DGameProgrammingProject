@@ -102,19 +102,19 @@ public class Puzzle1 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MovePlayer(-1, 0); // Move up
+            MovePlayer(-1, 0); 
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            MovePlayer(1, 0); // Move down
+            MovePlayer(1, 0);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            MovePlayer(0, -1); // Move left
+            MovePlayer(0, -1); 
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            MovePlayer(0, 1); // Move right
+            MovePlayer(0, 1); 
         }
 
         }

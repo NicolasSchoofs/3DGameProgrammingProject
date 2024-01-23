@@ -7,6 +7,10 @@ TagManager:
   - vogel
   - needed
   - management
+  - Coin
+  - WallPuzzle1
+  - WallPuzzle2
+  - WallPuzzle3
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,9 @@ public class gamestates : MonoBehaviour
     public FPSController movement;
     public AudioListener geluid;
 
+    private bool pause = false;
+    public Canvas pauseScreen;
+
 
     public enum Gamestates
     {
@@ -79,6 +82,22 @@ public class gamestates : MonoBehaviour
                 break;
 
             
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            pause = !pause;
+        }
+
+        if(pause)
+        {
+            pauseScreen.enabled = true;
+            Time.timeScale = 0f;
+        }
+        else 
+        {
+            pauseScreen.enabled = false;
+            Time.timeScale = 1f;
         }
     }
 
