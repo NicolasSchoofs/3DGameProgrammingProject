@@ -62,11 +62,11 @@ public class Puzzle2 : MonoBehaviour
         {
             if(!isInteracting && !won) 
             {
-                interactionText.text = "Press E to interact";
+                interactionText.text = "Druk op E om te interacteren";
             }
             if(isInteracting && won)
             {
-                interactionText.text = "Press E to end the puzzle";
+                interactionText.text = "Druk op E om de puzzel te beëindigen";
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -76,7 +76,7 @@ public class Puzzle2 : MonoBehaviour
                 {
                     player.GetComponent<FPSController>().enabled = false;
                     mazeCamera.enabled = true;
-                    interactionText.text = "Use the arrow keys to navigate the maze";
+                    interactionText.text = "Gebruik de pijltjes om het doolhof te navigeren";
                     Debug.Log("Maze interaction started.");
                     playerModel.SetActive(false);
                 }
@@ -170,18 +170,6 @@ void MovePlayer(int offsetX, int offsetY)
      DrawMaze();
 }
 
-void PrintSubarray(int[,] subarray)
-        {
-            for (int i = 0; i < subarray.GetLength(0); i++)
-            {
-                for (int j = 0; j < subarray.GetLength(1); j++)
-                {
-                    Console.Write(subarray[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-        }
 
 void Win() {
     won = true;
@@ -269,7 +257,6 @@ bool IsWithinBounds(int x, int y)
 
 
         GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
-
 
         
         if(type == 2) 

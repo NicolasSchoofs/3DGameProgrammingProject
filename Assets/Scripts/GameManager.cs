@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void loadNextScene() {
     
-        if(coinCounter >= 1)
+        if(coinCounter >= 3)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;

@@ -32,22 +32,22 @@ Kosteneffectief: Lage bedrijfskosten, hoge efficiëntie.";
     // Update is called once per frame
     void Update()
     {
+
         Vector3 playerPosition = transform.InverseTransformPoint(player.transform.position);
         if(playerPosition.magnitude <= interactionRange)
         {
-
             if(!active)
             {
-                infoText.text = "Press E to interact";
+                infoText.text = "Druk op E om te interacteren";
             }
-
             if(Input.GetKeyDown(KeyCode.E)) 
             {
                 active = !active;
                 infoText.text = text;
             }
         }
-        else {
+        else 
+        {
             active = false;
             infoText.text = "";
         }

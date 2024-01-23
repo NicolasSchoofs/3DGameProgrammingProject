@@ -17,7 +17,7 @@ public class Puzzle1 : MonoBehaviour
     float interactionRange = 6f;
 
     private  int[,] maze = {
-         {1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+{1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1},
 {1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1},
 {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1},
@@ -62,11 +62,11 @@ public class Puzzle1 : MonoBehaviour
         {
             if(!isInteracting && !won) 
             {
-                interactionText.text = "Press E to interact";
+                interactionText.text = "Druk op E om te interacteren";
             }
             if(isInteracting && won)
             {
-                interactionText.text = "Press E to end the puzzle";
+                interactionText.text = "Druk op E om de puzzel te beëindigen";
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -76,8 +76,7 @@ public class Puzzle1 : MonoBehaviour
                 {
                     player.GetComponent<FPSController>().enabled = false;
                     mazeCamera.enabled = true;
-                    interactionText.text = "Use the arrow keys to navigate the maze";
-                    Debug.Log("Maze interaction started.");
+                    interactionText.text = "Gebruik de pijltjes om het doolhof te navigeren";
                     playerModel.SetActive(false);
                 }
                 if(!isInteracting)
@@ -85,7 +84,6 @@ public class Puzzle1 : MonoBehaviour
                     player.GetComponent<FPSController>().enabled = true;
                     mazeCamera.enabled = false;
                     interactionText.text = "";
-                    Debug.Log("Maze interaction ended.");
                     playerModel.SetActive(true);
                 }
 
@@ -159,7 +157,6 @@ void MovePlayer(int offsetX, int offsetY)
             maze[currentPlayerX, currentPlayerY] = 0; 
 
             DestroyAllWalls();
-
 
         }
         else if (cellValue == 4)
@@ -251,7 +248,7 @@ bool IsWithinBounds(int x, int y)
 
         
 
-        float wallPositionZ = x * wallScaleX + cubeLocalPosition.z;
+        float wallPositionZ = x * wallScaleZ + cubeLocalPosition.z;
         float wallPositionY = y * wallScaleY + cubeLocalPosition.y;
 
 

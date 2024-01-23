@@ -62,11 +62,11 @@ public class Puzzle3 : MonoBehaviour
         {
             if(!isInteracting && !won) 
             {
-                interactionText.text = "Press E to interact";
+                interactionText.text = "Druk op E om te interacteren";
             }
             if(isInteracting && won)
             {
-                interactionText.text = "Press E to end the puzzle";
+                interactionText.text = "Druk op E om de puzzel te beëindigen";
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -76,7 +76,7 @@ public class Puzzle3 : MonoBehaviour
                 {
                     player.GetComponent<FPSController>().enabled = false;
                     mazeCamera.enabled = true;
-                    interactionText.text = "Use the arrow keys to navigate the maze";
+                    interactionText.text = "Gebruik de pijltjes om het doolhof te navigeren";
                     Debug.Log("Maze interaction started.");
                     playerModel.SetActive(false);
                 }
@@ -102,19 +102,19 @@ public class Puzzle3 : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MovePlayer(-1, 0); // Move up
+            MovePlayer(-1, 0); 
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            MovePlayer(1, 0); // Move down
+            MovePlayer(1, 0); 
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            MovePlayer(0, -1); // Move left
+            MovePlayer(0, -1); 
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            MovePlayer(0, 1); // Move right
+            MovePlayer(0, 1); 
         }
 
         }
